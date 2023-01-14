@@ -77,3 +77,19 @@ export class CatController {
 
 #### [`server.ts`](src/server.ts)
 - Express 애플리케이션을 실행함
+
+## 작동 원리
+
+[`reflect-metadata`](https://www.npmjs.com/package/reflect-metadata)를 사용한다.
+
+`Reflect.defineMetadata(키, 값, 타겟_객체)`로 객체의 프로토타입에 원하는 정보를 저장할 수 있다.
+
+`Reflect.getMetadata(키, 타겟_객체)`로 객체에 저장된 정보를 가져와서 원하는 처리(라우터 등록, 트랜잭션 등등)를 수행할 수 있다.
+
+데코레이터는 객체 정의 시점에 실행되며
+
+클래스 데코레이터는 생성자를 인자로
+
+메서드 데코레이터는 클래스의 프로토타입과 메서드의 이름을 인자로 받는다.
+
+받은 인자와 `Reflect`를 활용해서 메타데이터를 객체의 프로토타입에 저장하고, 나중에 꺼내서 각종 처리를 하면 된다.
