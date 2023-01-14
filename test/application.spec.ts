@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import application from '../src/application';
 import request from 'supertest';
 
