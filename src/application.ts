@@ -15,7 +15,7 @@ class Application {
 
   private registerRouters() {
     this._instance.get('/', (req, res) => {
-      res.json({ message: 'Hello world! ' });
+      res.json({ message: 'Hello world!' });
     });
   }
 }
