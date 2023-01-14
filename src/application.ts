@@ -24,7 +24,6 @@ class Application {
     const info: Array<{ api: string; handler: string }> = [];
 
     controllers.forEach((controllerClass) => {
-      console.log('== initialize controllerInstance');
       const controllerInstance: { [handleName: string]: Handler } =
         new controllerClass() as any;
 
